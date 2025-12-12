@@ -5,6 +5,5 @@ assets.directory = "./"
 
 dev.port = 3000
 routes = [
-  { pattern = "openstripedashboard.com", custom_domain = true },
-  { pattern = "www.openstripedashboard.com", custom_domain = true }
+  { pattern = "plrev.wilmake.com", custom_domain = true }
 ]

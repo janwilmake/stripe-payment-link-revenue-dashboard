@@ -191,6 +191,17 @@ function processPaymentLink(
 
 export default {
   async fetch(request: Request): Promise<Response> {
+    const hostname = new URL(request.url).hostname;
+
+    if (
+      hostname === "openstripedashboard.com" ||
+      hostname === "www.openstripedashboard.com"
+    ) {
+      return new Response(null, {
+        status: 301,
+        headers: { Location: "https://plrev.wilmake.com" },
+      });
+    }
     try {
       // Extract Authorization header
       const authHeader = request.headers.get("Authorization");
